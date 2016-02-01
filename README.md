@@ -17,7 +17,7 @@ To see profile results, compile the solution with VS2015 and execute the binary.
 
 ## Performance Reference
 
-The default test case is 0 - 1000 bytes random size allocation without thread safety in VS2015 release mode.
+The default test case is 0 - 1000 bytes random size allocation without thread safety in VS2015 release mode.  
 It is about 7 times faster than malloc() and free().
    
 ## Others
