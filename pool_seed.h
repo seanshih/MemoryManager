@@ -3,15 +3,21 @@
  * @file   pool_seed.h
  * @author sean shih
  * @date   09/01/2014 Mon  04:55 PM
- * @brief
+ * @brief  page size definition
  *
  * @copyright
  *   All content (c) 2014-2015 DigiPen (USA) Corporation, all rights reserved.
  */
-/* *************************************************************************/
-//#define SENSITIVE
+ /* *************************************************************************/
 
-#ifndef SENSITIVE
+// use META(chunk_size, count) to define page size
+// where 
+// chunk_size = the size of chunk
+// count = number of chunks per page
+// the page size will be chunk_size * count
+// 
+// smaller page size will result in more allocations but less memory waste
+
 META(0, 0)
 META(4, 2048)
 META(8, 2048)
@@ -29,24 +35,3 @@ META(1536, 32)
 META(2048, 32)
 META(3072, 16)
 META(4096, 16)
-
-#else
-META(0, 0)
-META(4, 2)
-META(8, 2)
-META(16, 2)
-META(32, 2)
-META(64, 2)
-META(128, 2)
-META(192, 2)
-META(256, 2)
-META(384, 2)
-META(512, 2)
-META(768, 2)
-META(1024, 2)
-META(1536, 2)
-META(2048, 2)
-META(3072, 2)
-META(4096, 2)
-
-#endif

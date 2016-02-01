@@ -8,15 +8,16 @@
  * @copyright
  *   All content (c) 2014-2015 DigiPen (USA) Corporation, all rights reserved.
  */
-/* *************************************************************************/
+ /* *************************************************************************/
 #pragma once
+#include <cstdlib>
 
 namespace Memory
 {
-class ChunkPool;
-
-void* malloca(std::size_t size);
-void  dealloca(void*);
-void* calloca(std::size_t size);
-void* lua_alloc(void* userData, void* ptr, std::size_t oldSize, std::size_t newSize);
+  // allocate size memory from chunk pool
+  void* malloca(std::size_t size);
+  // deallocate size memory from chunk pool
+  void  dealloca(void*);
+  // allocate and initialize the chunk with 0
+  void* calloca(std::size_t size);
 }
